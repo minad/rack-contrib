@@ -35,12 +35,15 @@ interface:
   CSS for cross-site AJAX-style data loading
 * Rack::Deflect - Helps protect against DoS attacks.
 * Rack::ResponseCache - Caches responses to requests without query strings
-  to Disk or a user provider Ruby object. Similar to Rails' page caching.
+  to Disk or a user provider Ruby object. Similar to Rails' page caching. (Better use Rack::Cache by rtomayko)
 * Rack::RelativeRedirect - Transforms relative paths in redirects to
   absolute URLs.
 * Rack::Backstage - Returns content of specified file if it exists, which makes
   it convenient for putting up maintenance pages.
 * Rack::Format - Adds a format extension at the end of the URI when there is none, corresponding to the mime-type given in the Accept HTTP header.
+* Rack::Tidy - Validate and cleanup XML output with xmllint or tidy
+* Rack::Rewrite - Rewrite url bases. If you have an application which wants to be installed in / you can installed it e.g.
+  in /~user/app by using this middleware's base rewriting.
 
 === Use
 
