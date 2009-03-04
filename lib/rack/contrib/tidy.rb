@@ -3,7 +3,7 @@ require 'open3'
 module Rack
   class Tidy
     TIDY_CMD = 'tidy -i -xml -access 3 -quiet'
-    XMLLINT_CMD = 'xmllint --format --valid --dtdvalid file:/tmp/xhtml11.dtd -'
+    XMLLINT_CMD = 'xmllint --format --valid -'
 
     def initialize(app, options={})
       @app = app
@@ -29,7 +29,7 @@ module Rack
 
     def html?(header)
       %w(application/xhtml+xml text/html).any? do |type|
-        header['Content-Type'].include?(type)
+        header['Content-Type'].to_s.include?(type)
       end
     end
   end

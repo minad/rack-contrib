@@ -35,7 +35,7 @@ module Rack
 
     def html?(header)
       %w(application/xhtml+xml text/html).any? do |type|
-        header['Content-Type'].include?(type)
+        header['Content-Type'].to_s.include?(type)
       end
     end
   end
